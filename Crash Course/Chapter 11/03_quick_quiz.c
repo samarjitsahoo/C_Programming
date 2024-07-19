@@ -9,5 +9,8 @@ int main(){
     // int arr[n]; // Not allowed in c
     ptr[0] = 3; 
     printf("%d", ptr[0]);
+
+    free(ptr);
     return 0;
+    
 }

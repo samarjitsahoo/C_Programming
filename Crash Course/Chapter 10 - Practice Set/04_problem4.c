@@ -28,5 +28,6 @@ int main()
     fprintf(ptr, "%d", salary2);
     fprintf(ptr, "%c", '\n');
 
+    fclose(ptr);
     return 0;
 }

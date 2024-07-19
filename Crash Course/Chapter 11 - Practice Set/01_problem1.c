@@ -8,5 +8,6 @@ int main(){
     ptr[0] = 45;
     printf("%d \n", ptr[0]);
     
+    free(ptr);
     return 0;
 }

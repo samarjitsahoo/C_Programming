@@ -14,5 +14,6 @@ int main()
     ptr = fopen("myfile.txt", "a");
     fprintf(ptr, "%s", string);
 
+    fclose(ptr);
     return 0;
 }

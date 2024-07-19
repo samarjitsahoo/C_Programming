@@ -10,5 +10,7 @@ int main(){
     ptr[0] = 3;
     ptr [1]= 6;
     printf("%d", ptr[0]);
+
+    free(ptr);
     return 0;
 }

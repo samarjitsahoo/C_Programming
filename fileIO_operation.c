@@ -4,20 +4,20 @@ int main()
 {
     FILE *ptr = NULL;
     ptr = fopen("myfile.txt", "r+");
-    // char * c = fgetc(ptr);
-    // printf("The character I read was %c\n", c );
-    // c = fgetc(ptr);
-    // printf("The character I read was %c\n", c );
+    
+    if (ptr == NULL) {
+        perror("Failed to open file");
+        return 1;
+    }
 
+    char str[5]; // Allocate one extra space for the null terminator
 
-    char str[4];
-    fgets(str, 5, ptr);
-    printf("The string is %s\n", str);
-
-    // fputc('o',ptr);
-    // fputs("this is harry",ptr);
-
-
+    // Read up to 4 characters (leaving space for null terminator)
+    if (fgets(str, sizeof(str), ptr) != NULL) {
+        printf("The string is %s\n", str);
+    } else {
+        printf("Failed to read from file or end of file reached.\n");
+    }
 
     fclose(ptr);
     return 0;
