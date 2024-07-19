@@ -20,7 +20,18 @@ int main()
     }
 
     n = 10;
-    ptr = (int *)realloc(ptr, 10 * sizeof(int));
+    int *temp = (int *)realloc(ptr, n * sizeof(int));
+
+    // Check if realloc was successful
+    if (temp == NULL) {
+        // If realloc fails, free the original memory and exit
+        free(ptr);
+        perror("Error reallocating memory");
+        return 1; // Exit with error code
+    }
+
+    // Reassign the pointer if realloc was successful
+    ptr = temp;
 
     for (int i = 0; i < n; i++)
     {

@@ -17,5 +17,7 @@ int main(){
     printf("%.2f\n", ptr[2]);
     printf("%.2f\n", ptr[3]);
     printf("%.2f\n", ptr[4]); 
+
+    free(ptr);
     return 0;
 }
