@@ -1,38 +1,29 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-int isPalindrome(int num)
-{
-    int originalNum = num;
-    int reversedNum = 0;
-    int remainder;
-
-    // Reverse the number
-    while (num != 0) {
-        remainder = num % 10;
-        reversedNum = reversedNum * 10 + remainder;
-        num /= 10;
-    }
-
-    // Check if the original number is equal to its reverse
-    if (originalNum == reversedNum) {
-        return 1; // True
-    } else {
-        return 0; // False
-    }
-}
-
+#include<stdio.h>
+#include<string.h>
+long long int max=1e6 +5;
 int main()
 {
-    int number;
-    printf("Enter a number to check whether it is a palindrome or not \n");
-    scanf("%d", &number);
+	//Defining a string to take input of the number
+	char number[max];
 
-    if (isPalindrome(number)) {
-        printf("This number is a palindrome\n");
-    } else {
-        printf("This number is not a palindrome\n");
-    }
+	long long int len,i,count=0;
 
-    return 0;
+	//Taking the inputin form of a string
+	printf("Enter a Number: ");
+	scanf("%s",number);
+
+	//Finding the number of digits by calculating the lenght of the string
+	len=strlen(number);
+
+	//Checking if the number is a palindrome or not
+	for(i=0;i<len/2;i++)
+	{
+		if(number[i]==number[len-i-1])
+				count++;
+	}
+	if(count==len/2)
+		printf("The entered number %s is a palindrome\n",number);
+	else
+		printf("The entered number %s is not a palindrome\n",number);
+	return 0;
 }

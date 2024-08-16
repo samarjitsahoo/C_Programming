@@ -1,17 +1,30 @@
+/*
+ * Handling of pointers in a C program
+ * A pointer in the C language is an object that stores the address of another
+ * object.
+ * A pointer in C is used to allocate memory dynamically i.e. at run time.
+ */
+
 #include <stdio.h>
 
-int main()
-{
-    printf("Lets learn about pointers\n");
-    int a=76;
-    int *ptra = &a;
-    int *ptr2 = NULL;
-    printf("The address of pointer to a is %p\n", &ptra);
-    printf("The address of a is %p\n", &a);
-    printf("The address of a is %p\n", ptra);
-    printf("The address of some garbage is %p\n", ptr2);
-    printf("The value of a is %d\n", *ptra);
-    printf("The value of a is %d\n", a);
+int main(void) {
+    int * pc; /* the '*' is used to make pointer */
+    int c;
+
+    c = 22;
+    printf("Address of c: %p\n", (void * ) & c);
+    printf("Value of c: %d\n\n", c);
+
+    pc = & c;
+    printf("Address of c: %p\n", (void * ) pc);
+    printf("Content of c: %d\n\n", * pc);
+
+    c = 11;
+    printf("Address of c: %p\n", (void * ) pc);
+    printf("Content of c: %d\n\n", * pc);
+
+    * pc = 2;
+    printf("Address of c: %p\n", (void * ) & c);
+    printf("Value of c: %d\n\n", c);
     return 0;
 }
-
