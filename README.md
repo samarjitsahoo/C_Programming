@@ -1,4 +1,4 @@
-# C_Programming
+# C Programming
 <div align="center">
 <img src="Assets/c-programming.png" width="150" height="auto">
 </div>
